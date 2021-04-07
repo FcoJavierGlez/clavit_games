@@ -1,0 +1,212 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap');
+
+:root {
+    --color_clavit: #3CF3BE;
+    --color_clavit_transparent: #3cf3bf44;
+}
+
+* {
+    font-family: 'Nunito';
+}
+
+body {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    margin: 0;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+#box_message {
+    align-items: center;
+    display: flex;
+    *display: none;
+    flex-flow: column;
+    height: 400px;
+    justify-content: center;
+    position: absolute;
+    row-gap: 15px;
+    width: 300px;
+    z-index: 1;
+}
+
+.message {
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 3px solid var(--color_clavit);
+    border-radius: 15px;
+    display: flex;
+    flex-flow: column;
+    font-weight: bold;
+    height: 49%;
+    justify-content: center;
+    row-gap: 15px;
+    width: 75%;
+}
+
+.message:active {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-color: transparent;
+    color: transparent;
+}
+
+/* GAME */
+
+.game {
+    border: 5px solid var(--color_clavit);
+    border-radius: 20px;
+    padding: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+.game-list {
+    align-items: flex-start;
+    *background-color: grey;
+    column-gap: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    max-height: 390px;
+    overflow-y: auto;
+    padding: 5px;
+    row-gap: 10px;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+a.card-game {
+    align-items: center;
+    background-color: ghostwhite;
+    border: 2px solid black;
+    border-radius: 10px;
+    color: black;
+    font-size: 0.8rem;
+    font-weight: bold;
+    display: grid;
+    grid-template-rows: 80px 20px;
+    height: 100px;
+    justify-content: center;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 80px;
+}
+
+a.card-game:focus {
+    animation: card_select 0.5s;
+}
+
+.card-game img {
+    height: 70px;
+}
+
+/* INFO */
+
+.info {
+    border-bottom: 2px solid black;
+    margin-bottom: 2px;
+    height: 18%;
+}
+
+.score_info {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: space-between;
+    padding: 0 6px;
+}
+
+.box_score {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+}
+
+#score_bank, #score_player {
+    text-align: right;
+    width: 22%;
+}
+
+.buttons {
+    align-items: center;
+    column-gap: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+div.buttons button {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 120%;
+    border: 2px solid black;
+    border-radius: 50%;
+    height: 50px;
+    padding: 0;
+    width: 50px;
+}
+
+#stop {
+    border: 2px solid rgb(205,0,0);
+    background-image: url(../img/buttons_icon/stop.png);
+}
+
+#add {
+    border: 2px solid var(--color_clavit);
+    background-image: url(../img/buttons_icon/add.png);
+}
+
+#stop, #add:hover {
+    cursor: pointer;
+}
+
+#stop:focus, #add:focus {
+    outline: none;
+}
+
+#stop:active, #add:active {
+    animation: brightness 1s;
+}
+
+@keyframes brightness {
+    from {filter: brightness(1);}
+    to {filter: brightness(1.2);}
+}
+
+@keyframes card_select {
+    from {
+        box-shadow: var(--color_clavit) 0 0 0 0;
+        transform: scale(1);
+    }
+    to {
+        box-shadow: var(--color_clavit) 0 0 6px 1px;
+        /* box-shadow: var(--color_clavit) 0 0 2px 2px; */
+        transform: scale(1.05);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* BOARDGAME */
+
+.render_boardgame {
+    align-items: center;
+    display: flex;
+    height: 90%;
+    justify-content: center;
+}
+
+#boardgame {
+    height: 360px;
+    width: 300px;
+}
