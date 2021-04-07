@@ -101,7 +101,7 @@ a.card-game {
 }
 
 a.card-game:focus {
-    -webkit-animation: card_select;
+    -webkit-animation-name: card_select;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-fill-mode: forwards;
     animation-name: card_select;
