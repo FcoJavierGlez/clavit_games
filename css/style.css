@@ -187,6 +187,17 @@ div.buttons button {
     to {filter: brightness(1.2);}
 }
 
+@-webkit-keyframes card_select {
+    from {
+        box-shadow: var(--color_clavit) 0 0 0 0;
+        -webkit-transform: scale(1);
+    }
+    to {
+        box-shadow: var(--color_clavit) 0 0 6px 1px;
+        -webkit-transform: scale(1.05);
+    }
+}
+
 @keyframes card_select {
     from {
         box-shadow: var(--color_clavit) 0 0 0 0;
@@ -194,7 +205,6 @@ div.buttons button {
     }
     to {
         box-shadow: var(--color_clavit) 0 0 6px 1px;
-        /* box-shadow: var(--color_clavit) 0 0 2px 2px; */
         transform: scale(1.05);
     }
 }
