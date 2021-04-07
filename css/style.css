@@ -101,7 +101,7 @@ a.card-game {
 }
 
 a.card-game:focus {
-    animation: card_select 0.5s;
+    animation: card_select 0.5s forwards;
 }
 
 .card-game img {
