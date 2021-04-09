@@ -187,13 +187,26 @@ const Game = class {
     }
 
     /**
+     * Determina si la IA se arriesga a desempatar en función del valor del empate.
+     * 
+     * @param {Number} pointsPlayer2 
+     * @returns {Boolean} True si la IA decide desempatar
+     */
+    _tieBreaker = function(pointsPlayer2) {
+        if (pointsPlayer2 == 0.5) return true;
+        else if (pointsPlayer2 == 7 ) return false;
+        return Math.random() * 100 < 1 / pointsPlayer2 * 100;
+    }
+
+    /**
      * Turno de juego de la IA
      */
     playIA = function() {   
         let pointsPlayer1 = this.getHandPoints();
+        let pointsPlayer2 = this.getHandPoints(2);
 
-        if (this.getHandPoints(2) >= pointsPlayer1) {
-            this._player1.lose = this.getHandPoints(2) > pointsPlayer1;
+        if ( pointsPlayer2 > pointsPlayer1 || ( pointsPlayer2 == pointsPlayer1 && !this._tieBreaker(pointsPlayer2) ) ) {
+            this._player1.lose = pointsPlayer2 > pointsPlayer1;
             this._reassingScore();
             return;
         }
