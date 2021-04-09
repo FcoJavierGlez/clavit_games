@@ -67,7 +67,7 @@ class Food {
         let food = this;
         return setInterval(
             () => {
-                food._element.classList = food._time < 0 ? this._CLASS_NORMAL_FOOD : this._CLASS_SPECIAL_FOOD;
+                food._element.classList = food._time < 0 ? food._CLASS_NORMAL_FOOD : food._CLASS_SPECIAL_FOOD;
                 food._time = (food._time -= food._time > 0 ? 0.1 : 0).toFixed(1);
                 if (food._time == 0) food.eated();
             }, 100);

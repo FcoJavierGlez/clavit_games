@@ -118,7 +118,7 @@ const SnakeGame = class {
             else {
                 const points = game._feedSnake([nextRow,nextCol]);
                 game._renderBoardGame();
-                if (!(points == this._POINTS_SPECIAL_FOOD)) //if snake hasn't just eaten a special food
+                if (!(points == game._POINTS_SPECIAL_FOOD)) //if snake hasn't just eaten a special food
                     game._createFood();
                 if (game._checkCreateSpecialFood()) 
                     game._createFood(true);

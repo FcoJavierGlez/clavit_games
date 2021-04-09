@@ -29,7 +29,7 @@ class Chronometer {
         return setInterval(
             () => {
                 ++chrono._seconds;
-                chrono._seconds %= this._MAX_SECONDS_PER_DAY;
+                chrono._seconds %= chrono._MAX_SECONDS_PER_DAY;
             } , 1000);
     }
 
