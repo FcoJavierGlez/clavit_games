@@ -10,13 +10,6 @@
  * consumida antes de acabar su tiempo, acabará desapareciendo.
  */
 class Food {
-    static _CLASS_NORMAL_FOOD  = 'square food';
-    static _CLASS_SPECIAL_FOOD = 'square special-food';
-    _points   = 0;
-    _time     = 0;
-    _idRender = 0;
-    _element  = null;
-    _nameThis = '';
 
     /**
      * Crea un objeto de la clase Food.
@@ -28,6 +21,9 @@ class Food {
      *                          Por defecto vale -1, es decir, nunca desaparece por agotar tiempo.
      */
     constructor(element,score,nameObj,time = -1) {
+        this._CLASS_NORMAL_FOOD  = 'square food';
+        this._CLASS_SPECIAL_FOOD = 'square special-food';
+        this._idRender = 0;
         this._element  = element;
         this._points   = score;
         this._nameThis = nameObj;
@@ -71,7 +67,7 @@ class Food {
         let food = this;
         return setInterval(
             () => {
-                food._element.classList = food._time < 0 ? Food._CLASS_NORMAL_FOOD : Food._CLASS_SPECIAL_FOOD;
+                food._element.classList = food._time < 0 ? this._CLASS_NORMAL_FOOD : this._CLASS_SPECIAL_FOOD;
                 food._time = (food._time -= food._time > 0 ? 0.1 : 0).toFixed(1);
                 if (food._time == 0) food.eated();
             }, 100);

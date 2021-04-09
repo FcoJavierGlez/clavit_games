@@ -10,10 +10,6 @@
  */
 
 const Snake = class {
-    _body               = [];
-    _alive              = true;
-    _direction          = 'right';
-    _headDirection      = 'right';
 
     /**
      * Crea una instancia de la clase Serpiente para el juego Snake.
@@ -21,6 +17,10 @@ const Snake = class {
      * @param {Number} boardGameLength 
      */
     constructor(boardGameLength) {
+        this._body               = [];
+        this._alive              = true;
+        this._direction          = 'right';
+        this._headDirection      = 'right';
         this._createSnakeBody(boardGameLength);
     }
 
