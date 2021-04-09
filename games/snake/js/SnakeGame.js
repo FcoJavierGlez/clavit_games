@@ -8,14 +8,7 @@
  */
 
 const SnakeGame = class {
-    static _POINTS_FOOD         = 5;    //Constant
-    static _POINTS_SPECIAL_FOOD = 15;   //Constant
-    static _MAX_SCORE           = 0;
-    _score     = 0;
-    _idPlay    = 0;
-    _boardGame = [];
-    _snake     = null;
-
+    
     /**
      * Constructor de la clase SnakeGame
      * 
@@ -23,7 +16,12 @@ const SnakeGame = class {
      * @param {Number} maxScore La puntuación máxima acumulada en una cookie en el navegador.
      */
     constructor(boardGame,maxScore) {
-        SnakeGame._MAX_SCORE = maxScore == undefined ? SnakeGame._MAX_SCORE : maxScore;
+        this._POINTS_FOOD         = 5;
+        this._POINTS_SPECIAL_FOOD = 15;
+        this._MAX_SCORE           = 0;
+        this._score     = 0;
+        this._idPlay    = 0;
+        this._MAX_SCORE = maxScore == undefined ? this._MAX_SCORE : maxScore;
         this._snake     = new Snake(boardGame.length);
         this._boardGame = boardGame;
         this._resetBoardGame();
@@ -39,7 +37,7 @@ const SnakeGame = class {
      * @return {String}        Puntuación máxima acumulada.
      */
     static getMaxScore = function (format = false) {
-        return format ? SnakeGame._formatScore(SnakeGame._MAX_SCORE) : SnakeGame._MAX_SCORE;
+        return format ? this._formatScore(this._MAX_SCORE) : this._MAX_SCORE;
     }
 
     /**
@@ -120,7 +118,7 @@ const SnakeGame = class {
             else {
                 const points = game._feedSnake([nextRow,nextCol]);
                 game._renderBoardGame();
-                if (!(points == SnakeGame._POINTS_SPECIAL_FOOD)) //if snake hasn't just eaten a special food
+                if (!(points == this._POINTS_SPECIAL_FOOD)) //if snake hasn't just eaten a special food
                     game._createFood();
                 if (game._checkCreateSpecialFood()) 
                     game._createFood(true);
@@ -149,9 +147,9 @@ const SnakeGame = class {
      */
     _feedSnake = function([nextRow,nextCol]) {
         let points = 0;
-        this._score += (points = this._boardGame[nextRow][nextCol].food.eated()) == undefined ? SnakeGame._POINTS_SPECIAL_FOOD : points;
+        this._score += (points = this._boardGame[nextRow][nextCol].food.eated()) == undefined ? this._POINTS_SPECIAL_FOOD : points;
         this._snake.eat([nextRow,nextCol]);
-        return points == undefined ? SnakeGame._POINTS_SPECIAL_FOOD : points;
+        return points == undefined ? this._POINTS_SPECIAL_FOOD : points;
     }
 
     /**
@@ -179,8 +177,8 @@ const SnakeGame = class {
             col = parseInt(Math.random() * this._boardGame[0].length);
         } while (this._boardGame[row][col].className !== 'square empty');
         this._boardGame[row][col].food = special ? 
-            new Food(this._boardGame[row][col],SnakeGame._POINTS_SPECIAL_FOOD,'food',3 + parseFloat( (Math.random() * 3).toFixed(1) )) : 
-            new Food(this._boardGame[row][col],SnakeGame._POINTS_FOOD,'food');
+            new Food(this._boardGame[row][col],this._POINTS_SPECIAL_FOOD,'food',3 + parseFloat( (Math.random() * 3).toFixed(1) )) : 
+            new Food(this._boardGame[row][col],this._POINTS_FOOD,'food');
         if (this._score > 0)
             this._boardGame[row][col].food.togglePause();
     }
@@ -198,7 +196,7 @@ const SnakeGame = class {
      * Finaliza el juego.
      */
     _finishGame = function () {
-        SnakeGame._MAX_SCORE = this._score > SnakeGame._MAX_SCORE ? this._score : SnakeGame._MAX_SCORE;
+        this._MAX_SCORE = this._score > this._MAX_SCORE ? this._score : this._MAX_SCORE;
         this._pause();
         this._togglePauseFoodTimer();
     }
