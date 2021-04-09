@@ -213,7 +213,8 @@ const Game = class {
 
         do {
             this.requestCard(2);
-        } while (this.getHandPoints(2) < pointsPlayer1);
+            pointsPlayer2 = this.getHandPoints(2);
+        } while ( pointsPlayer2 < pointsPlayer1 || ( pointsPlayer2 == pointsPlayer1 && this._tieBreaker(pointsPlayer2) ) );
 
         this._player1.lose = this.getHandPoints(2) > pointsPlayer1 && !this._player2.lose;
         this._reassingScore();
