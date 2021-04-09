@@ -48,7 +48,7 @@
         const fragment = new DocumentFragment();
 
         GAMES_LIST.forEach( e => {
-            if ( !(stinksOfApple(navigator.userAgent) && e.apple_compatibility) )
+            if ( !stinksOfApple(navigator.userAgent) || e.apple_compatibility )
                 fragment.appendChild( createCardGame(e) );
         });
         return fragment;
