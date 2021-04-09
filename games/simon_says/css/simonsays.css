@@ -1,5 +1,8 @@
-* {
-    -webkit-tap-highlight-color: transparent;
+/* INFO */
+
+#successes {
+    text-align: right;
+    width: 15%;
 }
 
 .panel-buttons {

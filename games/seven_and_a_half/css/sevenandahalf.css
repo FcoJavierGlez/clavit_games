@@ -1,9 +1,30 @@
+/* GAME */
+
+.game {
+    border: 5px solid var(--color_clavit);
+    border-radius: 20px;
+    display: grid;
+    grid-template-rows: repeat(2, 43%) 14%;
+    padding: 5px;
+    height: 400px;
+    width: 300px;
+}
+
 #hand_bank, #hand_player {
     column-gap: 1px;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     row-gap: 1px;
+}
+
+/* INFO */
+.info {
+    height: 18%;
+}
+
+.score_info {
+    justify-content: space-between;
 }
 
 /* CARDS */
@@ -96,4 +117,32 @@ button#restart_turn:focus, button#restart_game:focus {
     background-color: transparent;
     border-color: transparent;
     color: transparent;
+}
+
+/* BUTTONS ADD & STOP */
+#stop {
+    border: 2px solid rgb(205,0,0);
+    background-image: url(../img/buttons_icon/stop.png);
+}
+
+#add {
+    border: 2px solid var(--color_clavit);
+    background-image: url(../img/buttons_icon/add.png);
+}
+
+#stop, #add:hover {
+    cursor: pointer;
+}
+
+#stop:focus, #add:focus {
+    outline: none;
+}
+
+#stop:active, #add:active {
+    animation: brightness 1s;
+}
+
+@keyframes brightness {
+    from {filter: brightness(1);}
+    to {filter: brightness(1.2);}
 }
