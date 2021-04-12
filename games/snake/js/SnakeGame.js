@@ -36,7 +36,7 @@ const SnakeGame = class {
      * @param {Boolean} format Opcional: Booleano para solicitar la puntuación formateada '005' ó '5'
      * @return {String}        Puntuación máxima acumulada.
      */
-    static getMaxScore = function (format = false) {
+    getMaxScore = function (format = false) {
         return format ? this._formatScore(this._MAX_SCORE) : this._MAX_SCORE;
     }
 

@@ -57,8 +57,8 @@
         const renderUI = () => setInterval( 
             () => {
                 if (snake.getStatusGame() !== '') {
-                    localStorage.removeItem('snake_max_score');                         //Update cookies
-                    localStorage.setItem('snake_max_score',SnakeGame.getMaxScore());    //Update cookies
+                    localStorage.removeItem('snake_max_score');                     //Update cookies
+                    localStorage.setItem('snake_max_score',snake.getMaxScore());    //Update cookies
                     printScore(score,snake);
                     snake.resetGame();
                     /* stopRenderUI();
