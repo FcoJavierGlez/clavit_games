@@ -62,7 +62,7 @@
         console.log(DRAG_ELEMENTS);
         DRAG_ELEMENTS.forEach( e => {
             if (snake.getStatusGame() !== '') return;
-            e.addEventListener("mouseup", () => {
+            e.addEventListener("mouseenter", () => {
                 e.style.backgroundColor = `${newColor(e.style.backgroundColor)}`;
             });
             //e.addEventListener("dragover", () => snake.setDirection( e.id ));
