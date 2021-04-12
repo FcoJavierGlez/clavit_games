@@ -39,6 +39,8 @@
     const printScore = (display,game) => display.innerHTML = game.getScore(true);
     
     document.addEventListener("DOMContentLoaded", () => {
+        const DRAG_ELEMENTS        = [...document.getElementsByTagName("div")].filter( e => e.id.match(/zone_(up|down|left|right)/));
+        const CONTROL_PANEL        = document.getElementsByClassName("drag_panel")[0];
         const elementsBoardGame    = document.getElementById("boardgame");
         const score                = document.getElementById("score");
         const [boardGame,fragment] = createBoardGame();
@@ -46,6 +48,32 @@
         let idRenderUI             = 0;
         /* const time                 = document.getElementById("time");
         let crono                  = createCrono(0); */
+
+        const COLORS = ['red','yellow','green','blue'];
+
+        const newColor = currentColor => {
+            let color;
+            do {
+                color = COLORS[parseInt(Math.random() * COLORS.length)];
+            } while (currentColor == color);
+            return color;
+        }
+
+        console.log(DRAG_ELEMENTS);
+        DRAG_ELEMENTS.forEach( e => {
+            if (snake.getStatusGame() !== '') return;
+            e.addEventListener("mouseup", () => {
+                e.style.backgroundColor = `${newColor(e.style.backgroundColor)}`;
+            });
+            //e.addEventListener("dragover", () => snake.setDirection( e.id ));
+            //e.addEventListener("mouseenter", () => e.style.backgroundColor = 'red');
+        });
+
+        /* console.log(CONTROL_PANEL);
+        CONTROL_PANEL.onmouseenter = (e) => {
+            const div = e.target.closest('div');
+            console.log(div.id);
+        } */
         
         elementsBoardGame.appendChild(fragment);
 
@@ -81,12 +109,12 @@
             }
         });
 
-        document.addEventListener("click", e => {
+        /* document.addEventListener("click", e => {
             if (snake.getStatusGame() !== '') return;
             if (e.pageY < innerHeight * 0.3 || e.pageY > innerHeight * 0.7) 
                 e.pageY < innerHeight * 0.3 ? snake.setDirection( "up" ) : snake.setDirection( "down" );
             else
                 e.pageX < innerWidth * 0.5 ? snake.setDirection( "left" ) : snake.setDirection( "right" );
-        });
+        }); */
     });
 }

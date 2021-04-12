@@ -8,6 +8,67 @@
     --color_clavit: #3CF3BE;
 }
 
+.drag_panel {
+    display: flex;
+    flex-flow: column;
+    height: 360px;
+    position: absolute;
+    width: 300px;
+    z-index: 3;
+}
+
+div#zone_up, div#zone_left,div#zone_right, div#zone_down {
+    background-color: gray;
+    height: 90%;
+    width: 60%;
+}
+div#zone_up, div#zone_down {
+    width: 80%;
+}
+/* div#zone_left, div#zone_right {
+    height: 90%;
+} */
+div#up, div#middle, div#down {
+    height: 33%;
+    width: 100%;
+}
+div#up, div#down {
+    display: flex;
+    height: 30%;
+    justify-content: center;
+}
+div#down {
+    align-items: flex-end;
+}
+div#middle {
+    display: flex;
+    flex-flow: row;
+    height: 40%;
+}
+div#left, div#right {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+div#left {
+    justify-content: flex-start;
+}
+div#right {
+    justify-content: flex-end;
+}
+.red {
+    background-color: red;
+}
+.yellow {
+    background-color: yellow;
+}
+.blue {
+    background-color: blue;
+}
+.green {
+    background-color: green;
+}
+
 #boardgame {
     display: grid;
     grid-template-columns: repeat(10,var(--width_square_min_500));
