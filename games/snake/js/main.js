@@ -59,21 +59,21 @@
             return color;
         }
 
-        console.log(DRAG_ELEMENTS);
+        /* console.log(DRAG_ELEMENTS);
         DRAG_ELEMENTS.forEach( e => {
             if (snake.getStatusGame() !== '') return;
-            e.addEventListener("mouseenter", () => {
+            e.addEventListener("dragstart", () => {
                 e.style.backgroundColor = `${newColor(e.style.backgroundColor)}`;
             });
             //e.addEventListener("dragover", () => snake.setDirection( e.id ));
             //e.addEventListener("mouseenter", () => e.style.backgroundColor = 'red');
-        });
+        }); */
 
-        /* console.log(CONTROL_PANEL);
-        CONTROL_PANEL.onmouseenter = (e) => {
+        console.log(CONTROL_PANEL);
+        CONTROL_PANEL.ondrag = (e) => {
             const div = e.target.closest('div');
             console.log(div.id);
-        } */
+        }
         
         elementsBoardGame.appendChild(fragment);
 
