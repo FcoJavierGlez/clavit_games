@@ -88,13 +88,13 @@
             }
         });
 
-        document.addEventListener("click", e => {
+        /* document.addEventListener("click", e => {
             if (snake.getStatusGame() !== '') return;
             if (e.pageY < innerHeight * 0.3 || e.pageY > innerHeight * 0.7) 
                 e.pageY < innerHeight * 0.3 ? snake.setDirection( "up" ) : snake.setDirection( "down" );
             else
                 e.pageX < innerWidth * 0.5 ? snake.setDirection( "left" ) : snake.setDirection( "right" );
-        });
+        }); */
 
         GAME.addEventListener("mousemove", e => {
             /* console.log(`Horizontal: ${e.movementX}`);
