@@ -2,7 +2,7 @@ const GAMES_LIST = [
     {
         name: 'snake',
         ui_name: 'snake',
-        apple_compatibility: false,
+        apple_compatibility: true,
     },
     {
         name: 'seven_and_a_half',
