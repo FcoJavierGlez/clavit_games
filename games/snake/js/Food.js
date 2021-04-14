@@ -9,7 +9,7 @@
  * o de tipo especial (de mayor valor) que posee un tiempo de duración y que, de no ser
  * consumida antes de acabar su tiempo, acabará desapareciendo.
  */
-class Food {
+ class Food {
 
     /**
      * Crea un objeto de la clase Food.

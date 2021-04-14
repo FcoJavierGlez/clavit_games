@@ -9,7 +9,7 @@
  * de la serpiente, por cada acción que se realiza cada x tiempo.
  */
 
-const Snake = class {
+ const Snake = class {
 
     /**
      * Crea una instancia de la clase Serpiente para el juego Snake.

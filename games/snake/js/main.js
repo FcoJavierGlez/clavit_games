@@ -87,6 +87,12 @@
                 //!snake.getPaused() ? (idRenderUI = renderUI()) : stopRenderUI();
             }
         });
+        $("body").swipe( {
+            //Generic swipe handler for all directions
+            swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
+                snake.setDirection( direction );
+            }
+          });
 
         /* document.addEventListener("click", e => {
             if (snake.getStatusGame() !== '') return;

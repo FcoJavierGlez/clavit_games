@@ -27,6 +27,7 @@
 .snake {
     background-color: var(--color_clavit);
     border-radius: 20px;
+    *color: rgb(255, 227, 68);
 }
 .head {
     background-color: var(--color_clavit);

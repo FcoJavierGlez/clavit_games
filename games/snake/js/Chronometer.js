@@ -2,7 +2,7 @@
  * @author Francisco Javier González Sabariego
  */
 
-class Chronometer {
+ class Chronometer {
 
     constructor(time) {
         this._MAX_SECONDS_PER_DAY = 86400;

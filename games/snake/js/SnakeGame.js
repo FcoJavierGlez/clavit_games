@@ -7,7 +7,7 @@
  * 
  */
 
-const SnakeGame = class {
+ const SnakeGame = class {
     
     /**
      * Constructor de la clase SnakeGame
