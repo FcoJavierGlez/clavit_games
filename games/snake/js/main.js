@@ -45,7 +45,6 @@
     }
     
     document.addEventListener("DOMContentLoaded", () => {
-        const GAME                 = document.getElementsByClassName("game")[0];
         const elementsBoardGame    = document.getElementById("boardgame");
         const score                = document.getElementById("score");
         const [boardGame,fragment] = createBoardGame();
@@ -87,27 +86,12 @@
                 //!snake.getPaused() ? (idRenderUI = renderUI()) : stopRenderUI();
             }
         });
+
         $("body").swipe( {
             //Generic swipe handler for all directions
             swipe:function(event, direction, distance, duration, fingerCount, fingerData) {
                 snake.setDirection( direction );
             }
-          });
-
-        /* document.addEventListener("click", e => {
-            if (snake.getStatusGame() !== '') return;
-            if (e.pageY < innerHeight * 0.3 || e.pageY > innerHeight * 0.7) 
-                e.pageY < innerHeight * 0.3 ? snake.setDirection( "up" ) : snake.setDirection( "down" );
-            else
-                e.pageX < innerWidth * 0.5 ? snake.setDirection( "left" ) : snake.setDirection( "right" );
-        }); */
-
-        GAME.addEventListener("mousemove", e => {
-            /* console.log(`Horizontal: ${e.movementX}`);
-            console.log(`Vertical: ${e.movementY}`);
-            console.log( getDirection(e.movementX,e.movementY) ); */
-            if (snake.getStatusGame() !== '') return;
-            snake.setDirection( getDirection(e.movementX,e.movementY) );
         });
     });
 }
