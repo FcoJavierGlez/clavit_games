@@ -67,7 +67,7 @@ body {
 
 /* GAME LIST "MENU" */
 .game-list {
-    align-items: flex-start;
+    align-items: center;
     *background-color: grey;
     column-gap: 10px;
     display: flex;
