@@ -8,12 +8,14 @@
     width: 300px;
 }
 
-#hand_bank, #hand_player {
-    column-gap: 1px;
-    display: flex;
-    flex-wrap: wrap;
+#boardgame {
+    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
     justify-content: center;
-    row-gap: 1px;
+    justify-items: center;
+    height: 360px;
+    width: 300px;
 }
 
 /* INFO */
@@ -27,12 +29,13 @@
 
 /* CARDS */
 
-.card {
+.card, .card-hidden, .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10 {
     align-items: center;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid var(--color_clavit);
     border-radius: 10px;
-    display: flex;
-    flex-flow: column;
     height: 60px;
     justify-content: space-between;
     padding: 2px;
@@ -40,59 +43,51 @@
     width: 40px;
 }
 
+.card {
+    *background-color: rgb(225, 225, 225);
+    background-image: url(../assets/1.png);
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card-hidden {
+    border: none;
+    background-color: transparent;
+    background-image: none;
+}
+
 /* ASSETS */
-
-.coins, .cups, .clubs, .swords, .n8, .n9, .n10 {
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 50%;
-    width: 70%;
+.c1 {
+    background-image: url(../assets/);
 }
-
-.n {
-    align-items: center;
-    display: flex;
-    font-size: 1.3rem;
-    font-weight: bold;
-    height: 50%;
+.c2 {
+    background-image: url(../assets/);
 }
-
-.clubs {
-    background-image: url(../img/assets/clubs.png);
+.c3 {
+    background-image: url(../assets/);
 }
-
-.coins {
-    background-image: url(../img/assets/coin.png);
+.c4 {
+    background-image: url(../assets/);
 }
-
-.cups {
-    background-image: url(../img/assets/cup.png);
+.c5 {
+    background-image: url(../assets/);
 }
-
-.swords {
-    background-image: url(../img/assets/swords.png);
+.c6 {
+    background-image: url(../assets/);
 }
-
-.n8 {
-    background-image: url(../img/assets/spearman.png);
+.c7 {
+    background-image: url(../assets/);
 }
-
-.n9 {
-    background-image: url(../img/assets/horse.png);
+.c8 {
+    background-image: url(../assets/);
 }
-
-.n10 {
-    background-image: url(../img/assets/crown.png);
+.c9 {
+    background-image: url(../assets/);
 }
-
-.appear {
-    animation: appearCard 0.5s 1s forwards;
-}
-
-@keyframes appearCard {
-    from {transform: scale(0);}
-    to {transform: scale(1);}
+.c10 {
+    background-image: url(../assets/);
 }
 
 /* RESTART BUTTONS */
