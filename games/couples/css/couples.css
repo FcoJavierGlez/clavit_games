@@ -45,7 +45,7 @@
 
 .card {
     *background-color: rgb(225, 225, 225);
-    background-image: url(../assets/1.png);
+    background-image: url(../assets/2.png);
 }
 
 .card:hover {
