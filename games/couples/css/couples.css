@@ -1,0 +1,146 @@
+/* GAME */
+
+.game {
+    border: 5px solid var(--color_clavit);
+    border-radius: 20px;
+    padding: 5px;
+    height: 400px;
+    width: 300px;
+}
+
+#hand_bank, #hand_player {
+    column-gap: 1px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    row-gap: 1px;
+}
+
+/* INFO */
+.info {
+    height: 10%;
+}
+
+.score_info {
+    *justify-content: space-between;
+}
+
+/* CARDS */
+
+.card {
+    align-items: center;
+    border: 2px solid var(--color_clavit);
+    border-radius: 10px;
+    display: flex;
+    flex-flow: column;
+    height: 60px;
+    justify-content: space-between;
+    padding: 2px;
+    position: relative;
+    width: 40px;
+}
+
+/* ASSETS */
+
+.coins, .cups, .clubs, .swords, .n8, .n9, .n10 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 50%;
+    width: 70%;
+}
+
+.n {
+    align-items: center;
+    display: flex;
+    font-size: 1.3rem;
+    font-weight: bold;
+    height: 50%;
+}
+
+.clubs {
+    background-image: url(../img/assets/clubs.png);
+}
+
+.coins {
+    background-image: url(../img/assets/coin.png);
+}
+
+.cups {
+    background-image: url(../img/assets/cup.png);
+}
+
+.swords {
+    background-image: url(../img/assets/swords.png);
+}
+
+.n8 {
+    background-image: url(../img/assets/spearman.png);
+}
+
+.n9 {
+    background-image: url(../img/assets/horse.png);
+}
+
+.n10 {
+    background-image: url(../img/assets/crown.png);
+}
+
+.appear {
+    animation: appearCard 0.5s 1s forwards;
+}
+
+@keyframes appearCard {
+    from {transform: scale(0);}
+    to {transform: scale(1);}
+}
+
+/* RESTART BUTTONS */
+button#restart_turn, button#restart_game {
+    display: none;
+    background-color: var(--color_clavit);
+    border-radius: 48%;
+    padding: 8px 15px;
+}
+
+button#restart_turn:hover, button#restart_game:hover {
+    cursor: pointer;
+}
+
+button#restart_turn:focus, button#restart_game:focus {
+    outline: none;
+}
+
+.message:active button#restart_turn, .message:active button#restart_game {
+    background-color: transparent;
+    border-color: transparent;
+    color: transparent;
+}
+
+/* BUTTONS ADD & STOP */
+#stop {
+    border: 2px solid rgb(205,0,0);
+    background-image: url(../img/buttons_icon/stop.png);
+}
+
+#add {
+    border: 2px solid var(--color_clavit);
+    background-image: url(../img/buttons_icon/add.png);
+}
+
+#stop, #add:hover {
+    cursor: pointer;
+}
+
+#stop:focus, #add:focus {
+    outline: none;
+}
+
+#stop:active, #add:active {
+    animation: brightness 1s;
+}
+
+@keyframes brightness {
+    from {filter: brightness(1);}
+    to {filter: brightness(1.2);}
+}

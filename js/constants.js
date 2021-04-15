@@ -14,4 +14,9 @@ const GAMES_LIST = [
         ui_name: 'simon says',
         apple_compatibility: true,
     },
+    {
+        name: 'couples',
+        ui_name: 'parejas',
+        apple_compatibility: true,
+    },
 ];
