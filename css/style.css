@@ -79,20 +79,6 @@ body {
     scrollbar-width: none;
 }
 
-/* .game-list {
-    align-items: flex-start;
-    *background-color: grey;
-    column-gap: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    max-height: 390px;
-    overflow-y: auto;
-    padding: 5px;
-    row-gap: 10px;
-    scrollbar-width: none;
-} */
-
 ::-webkit-scrollbar {
     display: none;
 }
@@ -123,7 +109,6 @@ a.card-game:focus {
     animation-name: card_select;
     animation-duration: 0.5s;
     animation-fill-mode: forwards;
-    /* animation: card_select 0.5s forwards; */
 }
 
 .card-game img {
