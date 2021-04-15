@@ -89,7 +89,7 @@ a.card-game {
     border: 2px solid black;
     border-radius: 10px;
     color: black;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: bold;
     display: grid;
     grid-template-rows: 80px 20px;
