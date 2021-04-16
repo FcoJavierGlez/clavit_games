@@ -44,8 +44,8 @@
 }
 
 .card {
-    *background-color: rgb(225, 225, 225);
-    background-image: url(../assets/4.png);
+    background-color: rgb(225, 225, 225);
+    *background-image: url(../assets/4.png);
 }
 
 .card:hover {
@@ -91,51 +91,22 @@
 }
 
 /* RESTART BUTTONS */
-button#restart_turn, button#restart_game {
-    display: none;
+button#restart {
     background-color: var(--color_clavit);
     border-radius: 48%;
     padding: 8px 15px;
 }
 
-button#restart_turn:hover, button#restart_game:hover {
+button#restart:hover {
     cursor: pointer;
 }
 
-button#restart_turn:focus, button#restart_game:focus {
+button#restart:focus {
     outline: none;
 }
 
-.message:active button#restart_turn, .message:active button#restart_game {
+.message:active button#restart {
     background-color: transparent;
     border-color: transparent;
     color: transparent;
-}
-
-/* BUTTONS ADD & STOP */
-#stop {
-    border: 2px solid rgb(205,0,0);
-    background-image: url(../img/buttons_icon/stop.png);
-}
-
-#add {
-    border: 2px solid var(--color_clavit);
-    background-image: url(../img/buttons_icon/add.png);
-}
-
-#stop, #add:hover {
-    cursor: pointer;
-}
-
-#stop:focus, #add:focus {
-    outline: none;
-}
-
-#stop:active, #add:active {
-    animation: brightness 1s;
-}
-
-@keyframes brightness {
-    from {filter: brightness(1);}
-    to {filter: brightness(1.2);}
 }
