@@ -75,9 +75,9 @@
          * Reinicia la UI
          */
         const resetUI = () => {
-            MESSAGE_BOX.style.display = 'none';
             RESTART_TURN.style.display = 'none';
-            RESTART_GAME.style.display = 'none';
+            RESTART_GAME.style.display = 'none'; 
+            MESSAGE_BOX.classList = 'box_message_hidden';
             HAND_PLAYER.innerHTML = HAND_BANK.innerHTML = '';
             HAND_BANK.appendChild( createHand(game.getHand(2)) );
             HAND_PLAYER.appendChild( createHand(game.getHand()) );
@@ -91,7 +91,7 @@
          */
         const showMessageEndTurn = (playerLose,bankLose = false) => {
             let tie = !(playerLose || bankLose);
-            MESSAGE_BOX.style.display = 'flex';
+            MESSAGE_BOX.classList = 'box_message';
             if (tie)
                 MESSAGE_BOX.children[0].children[0].innerText = 'Empate';
             else if (bankLose) 
