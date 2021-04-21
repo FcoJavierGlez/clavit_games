@@ -20,7 +20,7 @@ const GAMES_LIST = [
     {
         name: 'simon_says',
         ui_name: 'simon says',
-        ios: 1,
+        ios: 0,
         android: 1,
         fechaInsercion: '2021-03-01',
         version: "1.0.0",
