@@ -32,13 +32,12 @@
         const fragment = new DocumentFragment();
 
         GAMES_LIST.forEach( e => {
-            if ( stinksOfApple(navigator.userAgent) ) {
+            if ( stinksOfApple(navigator.userAgent) ) 
                 e.ios ? fragment.appendChild( createCardGame(e) ) : false;
-            }
-            else if ( stinksOfAndroid(navigator.userAgent) ) {
+            else if ( stinksOfAndroid(navigator.userAgent) ) 
                 e.android ? fragment.appendChild( createCardGame(e) ) : false;
-            }
-            else fragment.appendChild( createCardGame(e) )
+            else 
+                fragment.appendChild( createCardGame(e) )
         });
         return fragment;
     }
