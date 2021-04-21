@@ -2,21 +2,37 @@ const GAMES_LIST = [
     {
         name: 'snake',
         ui_name: 'snake',
-        apple_compatibility: true,
+        ios: 1,
+        android: 1,
+        fechaInsercion: '2021-03-01',
+        version: "1.0.0",
+        fechaMod: '2021-03-01'
     },
     {
         name: 'seven_and_a_half',
         ui_name: '7 y media',
-        apple_compatibility: true,
+        ios: 1,
+        android: 0,
+        fechaInsercion: '2021-03-01',
+        version: "1.0.0",
+        fechaMod: '2021-03-01'
     },
     {
         name: 'simon_says',
         ui_name: 'simon says',
-        apple_compatibility: true,
+        ios: 1,
+        android: 1,
+        fechaInsercion: '2021-03-01',
+        version: "1.0.0",
+        fechaMod: '2021-03-01'
     },
     {
         name: 'couples',
         ui_name: 'parejas',
-        apple_compatibility: true,
+        ios: 1,
+        android: 1,
+        fechaInsercion: '2021-03-01',
+        version: "1.0.0",
+        fechaMod: '2021-03-01'
     },
 ];

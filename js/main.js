@@ -5,6 +5,7 @@
  */
 {   
     const stinksOfApple = userAgent => /\(.*(?<os>(Mac|iPad|iPod|iPhone|iOS)).*\)/i.test(userAgent) || /Version\/.* Safari/.test(userAgent);
+    const stinksOfAndroid = userAgent => /\(.*(?<os>(Android)).*\)/i.test(userAgent);
 
     const createCardGame = infoCard => {
         const CARD     = document.createElement("a");
@@ -31,8 +32,13 @@
         const fragment = new DocumentFragment();
 
         GAMES_LIST.forEach( e => {
-            if ( !stinksOfApple(navigator.userAgent) || e.apple_compatibility )
-                fragment.appendChild( createCardGame(e) );
+            if ( stinksOfApple(navigator.userAgent) ) {
+                e.ios ? fragment.appendChild( createCardGame(e) ) : false;
+            }
+            else if ( stinksOfAndroid(navigator.userAgent) ) {
+                e.android ? fragment.appendChild( createCardGame(e) ) : false;
+            }
+            else fragment.appendChild( createCardGame(e) )
         });
         return fragment;
     }
