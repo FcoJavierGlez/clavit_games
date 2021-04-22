@@ -114,6 +114,10 @@ body {
     scrollbar-width: none;
 }
 
+.message-panel {
+    text-align: center;
+}
+
 ::-webkit-scrollbar {
     display: none;
 }

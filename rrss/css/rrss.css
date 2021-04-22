@@ -1,0 +1,42 @@
+.info-panel {
+    align-items: center;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.rrss-icons {
+    align-items: center;
+    *border: 1px solid black;
+    display: flex;
+    height: 10vh;
+    justify-content: center;
+    width: 100%;
+}
+.rrss-icons a {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    width: 25%;
+}
+
+.icon-facebook, .icon-instagram, .icon-tik_tok, .icon-twitter {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 50%;
+    width: 100%;
+}
+
+.icon-facebook {
+    background-image: url(../img/facebook.svg);
+}
+.icon-instagram {
+    background-image: url(../img/instagram.svg);
+}
+.icon-tik_tok {
+    background-image: url(../img/tik-tok.svg);
+}
+.icon-twitter {
+    background-image: url(../img/twitter.svg);
+}
