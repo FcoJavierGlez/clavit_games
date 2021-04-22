@@ -218,7 +218,7 @@ div.buttons button {
 }
 
 .back {
-    background-image: url(../img/back_icon.svg);
+    background-image: url(../menu_games/img/back_icon.svg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
