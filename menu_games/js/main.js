@@ -4,6 +4,8 @@
  * @author Francisco Javier González Sabariego
  */
 {   
+    //Connect database
+    
     const stinksOfApple = userAgent => /\(.*(?<os>(Mac|iPad|iPod|iPhone|iOS)).*\)/i.test(userAgent) || /Version\/.* Safari/.test(userAgent);
     const stinksOfAndroid = userAgent => /\(.*(?<os>(Android)).*\)/i.test(userAgent);
 
