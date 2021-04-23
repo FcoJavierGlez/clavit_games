@@ -1,9 +1,15 @@
 /**
- * 
- * 
  * @author Francisco Javier González Sabariego
+ * 
+ * Menu de juegos. La lista de juegos se genera a partir de una petición a la API de la App.
  */
 {   
+    /**
+     * Genera la lista de juegos haciendo una petición a la API
+     * 
+     * @param {Function} callback   Función que insertará los nuevos elementos DOM dentro del elemento del árbol DOM pasado por parámetro
+     * @param {Element} elementDOM  Elemento del árbol DOM dónde se realizará la inserción de las tarjetas de juego
+     */
     async function gameList(callback, elementDOM = undefined) {
         const connect = await fetch(`http://localhost/clavit/api/games_list.php`);
         
@@ -12,6 +18,11 @@
         callback(getInfo, elementDOM);
     }
 
+    /**
+     * Envía a la API información con el id del usuario y del juego seleccionado
+     * 
+     * @param {Element} formDOM Elemento formulario dónde están insertadas las tarjetas de juegos
+     */
     async function countTotalAccessesGame(formDOM) {
         const data = new FormData(formDOM);
 
@@ -21,9 +32,28 @@
         });
     }
 
+    /**
+     * Determina si el dispositivo es de fabricación de Apple o se usa el navegador Safari
+     * 
+     * @param {String} userAgent Valor del atributo userAgent del objeto Navigator
+     * @returns {Boolean}        True si el SO es propiedad de Apple o si se usa el navegador Safari
+     */
     const stinksOfApple = userAgent => /\(.*(?<os>(Mac|iPad|iPod|iPhone|iOS)).*\)/i.test(userAgent) || /Version\/.* Safari/.test(userAgent);
+    
+    /**
+     * Determina si el SO es Android
+     * 
+     * @param {String} userAgent Valor del atributo userAgent del objeto Navigator
+     * @returns {Boolean}        True si el SO es Android
+     */
     const stinksOfAndroid = userAgent => /\(.*(?<os>(Android)).*\)/i.test(userAgent);
 
+    /**
+     * Crea una tarjeta de juego d ela lista de juegos
+     * 
+     * @param {Object} infoCard Objeto literal con la información del juego: nombre, logo, etc
+     * @returns {Element}       Elemento del árbol DOM (enlace) con la información del juego
+     */
     const createCardGame = infoCard => {
         const CARD     = document.createElement("a");
         const DIV_IMG  = document.createElement("div");
@@ -46,6 +76,14 @@
         return CARD;
     }
 
+    /**
+     * Añade comportamiento a cada una de las tarjetas de juego d ela lista de juego.
+     * 
+     * Al hacer click envía información a la BBDD y, si el navegador NO es Safari, realizará
+     * una breve animación antes de introducir al usuario en el juego.
+     * 
+     * @param {Element} cardList Lista de juegos (formulario)
+     */
     const addEventClickForEachCard = cardList => {
         const GAMES_CARD = [...document.querySelectorAll(".game-list a")];
 
@@ -65,6 +103,12 @@
         }));
     }
 
+    /**
+     * Crea la lista de juegos con la información de la lista sacada de la BBDD.
+     * 
+     * @param {Array} list   Array con la lista de juegos.
+     * @param {*} elementDOM Formulario donde se van a insertar los juegos de la lista.
+     */
     const createGamesList = (list,elementDOM) => {
         const fragment = new DocumentFragment();
 
