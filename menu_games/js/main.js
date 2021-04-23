@@ -5,7 +5,16 @@
  */
 {   
     //Connect database
-    
+
+    async function countTotalAccessesGame(formDOM) {
+        const data = new FormData(formDOM);
+
+        await fetch(`http://localhost/clavit/api/accessed_game.php`, {
+            method: 'POST',
+            body: data
+        });
+    }
+
     const stinksOfApple = userAgent => /\(.*(?<os>(Mac|iPad|iPod|iPhone|iOS)).*\)/i.test(userAgent) || /Version\/.* Safari/.test(userAgent);
     const stinksOfAndroid = userAgent => /\(.*(?<os>(Android)).*\)/i.test(userAgent);
 
