@@ -26,6 +26,7 @@
 
         CARD.href = `games/${infoCard.name}/index.html`;
         CARD.classList = 'card-game';
+        CARD.dataset.gid = `${infoCard.id}`;
 
         IMG.src = `img/logo_games/${infoCard.name}_logo.png`;
         IMG.alt = `logo_${infoCard.name}`;
