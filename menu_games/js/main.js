@@ -4,18 +4,8 @@
  * @author Francisco Javier González Sabariego
  */
 {   
-    const LOCAL_URL = "http://localhost/clavit/api";
-    const PRODUCTION_URL = "[...]/api";      //Sustituir [...] por la ruta en producción
-
-    const GAME_SOURCE = {
-        'list': 'games_list.php',
-        'account': 'accessed_game.php'
-    }
-
-    const getURL = href => /(127\.0\.0\.1|localhost)/.test(href) ? LOCAL_URL : PRODUCTION_URL;
-
     async function gameList(callback, elementDOM = undefined) {
-        const connect = await fetch(`${getURL(location.href)}/${GAME_SOURCE['list']}`);
+        const connect = await fetch(`http://localhost/clavit/api/games_list.php`);
         
         const getInfo = await connect.json();
     
@@ -25,7 +15,7 @@
     async function countTotalAccessesGame(formDOM) {
         const data = new FormData(formDOM);
 
-        await fetch(`${getURL(location.href)}/${GAME_SOURCE['account']}`, {
+        await fetch(`http://localhost/clavit/api/accessed_game.php`, {
             method: 'POST',
             body: data
         });
