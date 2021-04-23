@@ -59,11 +59,19 @@
 
         const GAMES_CARD = [...document.querySelectorAll(".game-list a")];
 
-        if (!stinksOfApple(navigator.userAgent)) {
-            GAMES_CARD.forEach( e => e.addEventListener("click", ev => {
-                ev.preventDefault();
-                e.addEventListener("animationend", () => location.assign(e.href));
-            }));
+        const createInputIdGame = id => {
+            const INPUT = document.createElement("input");
+            INPUT.type = 'hidden';
+            INPUT.name = 'gid';
+            INPUT.value = id;
+            GAMES_LIST.appendChild(INPUT);
         }
+
+        GAMES_CARD.forEach( e => e.addEventListener("click", ev => {
+            ev.preventDefault();
+            createInputIdGame(e.dataset.gid);
+            countTotalAccessesGame( GAMES_LIST );
+            stinksOfApple(navigator.userAgent) ? location.assign(e.href) : e.addEventListener("animationend", () => location.assign(e.href));
+        }));
     });
 }
