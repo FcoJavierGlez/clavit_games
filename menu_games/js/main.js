@@ -46,6 +46,25 @@
         return CARD;
     }
 
+    const addEventClickForEachCard = cardList => {
+        const GAMES_CARD = [...document.querySelectorAll(".game-list a")];
+
+        const createInputIdGame = id => {
+            const INPUT = document.createElement("input");
+            INPUT.type = 'hidden';
+            INPUT.name = 'gid';
+            INPUT.value = id;
+            cardList.appendChild(INPUT);
+        }
+
+        GAMES_CARD.forEach( e => e.addEventListener("click", ev => {
+            ev.preventDefault();
+            createInputIdGame(e.dataset.gid);
+            countTotalAccessesGame( cardList );
+            stinksOfApple(navigator.userAgent) ? location.assign(e.href) : e.addEventListener("animationend", () => location.assign(e.href));
+        }));
+    }
+
     const createGamesList = (list,elementDOM) => {
         const fragment = new DocumentFragment();
 
@@ -60,27 +79,12 @@
                 fragment.appendChild( createCardGame(e) );
         });
         elementDOM.appendChild(fragment);
+
+        addEventClickForEachCard(elementDOM);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
         const GAMES_LIST = document.getElementsByClassName("game-list")[0];
         gameList(createGamesList, GAMES_LIST);
-
-        const GAMES_CARD = [...document.querySelectorAll(".game-list a")];
-
-        const createInputIdGame = id => {
-            const INPUT = document.createElement("input");
-            INPUT.type = 'hidden';
-            INPUT.name = 'gid';
-            INPUT.value = id;
-            GAMES_LIST.appendChild(INPUT);
-        }
-
-        GAMES_CARD.forEach( e => e.addEventListener("click", ev => {
-            ev.preventDefault();
-            createInputIdGame(e.dataset.gid);
-            countTotalAccessesGame( GAMES_LIST );
-            stinksOfApple(navigator.userAgent) ? location.assign(e.href) : e.addEventListener("animationend", () => location.assign(e.href));
-        }));
     });
 }
