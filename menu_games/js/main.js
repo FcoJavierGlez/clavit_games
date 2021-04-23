@@ -4,7 +4,13 @@
  * @author Francisco Javier González Sabariego
  */
 {   
-    //Connect database
+    async function gameList(callback, elementDOM = undefined) {
+        const connect = await fetch(`http://localhost/clavit/api/games_list.php`);
+        
+        const getInfo = await connect.json();
+    
+        callback(getInfo, elementDOM);
+    }
 
     async function countTotalAccessesGame(formDOM) {
         const data = new FormData(formDOM);
