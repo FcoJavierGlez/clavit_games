@@ -46,23 +46,25 @@
         return CARD;
     }
 
-    const createGamesList = () => {
+    const createGamesList = (list,elementDOM) => {
         const fragment = new DocumentFragment();
 
-        GAMES_LIST.forEach( e => {
+        list = !list.length ? GAMES_LIST : list;
+
+        list.forEach( e => {
             if ( stinksOfApple(navigator.userAgent) ) 
                 e.ios ? fragment.appendChild( createCardGame(e) ) : false;
             else if ( stinksOfAndroid(navigator.userAgent) ) 
                 e.android ? fragment.appendChild( createCardGame(e) ) : false;
             else 
-                fragment.appendChild( createCardGame(e) )
+                fragment.appendChild( createCardGame(e) );
         });
-        return fragment;
+        elementDOM.appendChild(fragment);
     }
 
     document.addEventListener("DOMContentLoaded", () => {
         const GAMES_LIST = document.getElementsByClassName("game-list")[0];
-        GAMES_LIST.appendChild(createGamesList());
+        gameList(createGamesList, GAMES_LIST);
 
         const GAMES_CARD = [...document.querySelectorAll(".game-list a")];
 
