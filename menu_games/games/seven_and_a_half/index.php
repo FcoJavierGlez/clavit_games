@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -28,13 +31,9 @@
         <div>
             <div class="info">
                 <div class="score_info">
-                    <a href="../../index.html">
+                    <a href="../../index.php">
                         <div class="back"></div>
                     </a>
-                    <!-- <div class="box_score">
-                        <div class="bold">Score:</div>
-                        <div id="score_bank">0</div>
-                    </div> -->
                     <div class="box_score">
                         <div class="bold">Mano:</div>
                         <div id="hand_points_bank">0</div>

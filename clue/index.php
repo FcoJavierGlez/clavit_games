@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,7 +17,7 @@
     </noscript>
     <div class="game">
         <div class="upper-panel">
-            <a href="../index.html">
+            <a href="../index.php">
                 <div class="back"></div>
             </a>
             <div>PISTA</div>

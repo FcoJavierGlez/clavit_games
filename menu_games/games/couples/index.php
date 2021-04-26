@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,7 +30,7 @@
         </div>
         <div class="info">
             <div class="score_info">
-                <a href="../../index.html">
+                <a href="../../index.php">
                     <div class="back"></div>
                 </a>
                 <!-- <div class="bold">Intentos:</div>

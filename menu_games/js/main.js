@@ -60,7 +60,7 @@
         const DIV_NAME = document.createElement("div");
         const IMG      = document.createElement("img");
 
-        CARD.href = `games/${infoCard.name}/index.html`;
+        CARD.href = `games/${infoCard.name}/index.php`;
         CARD.classList = 'card-game';
         CARD.dataset.gid = `${infoCard.id}`;
 
